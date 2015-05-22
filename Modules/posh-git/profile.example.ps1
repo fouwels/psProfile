@@ -26,5 +26,3 @@ function global:prompt {
 Enable-GitColors
 
 Pop-Location
-
-Start-SshAgent -Quiet

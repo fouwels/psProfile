@@ -1,4 +1,4 @@
-function elevate-process
+Function elevate-process
 {
     $file, [string]$arguments = $args;
     $psi = new-object System.Diagnostics.ProcessStartInfo $file;
@@ -66,6 +66,11 @@ function Get-ClipboardText
     }
     powershell -sta -noprofile -command $command
 }
+$pth = (pwd | select -ExpandProperty Path) + "\WindowsPowerShell\";
+
+. ($pth + "Modules\posh-git\profile.example.ps1");
+Import-Module ($pth + "Modules\GitIgnores\GitIgnores.psm1");
+Import-Module ($pth + "Modules\PowerTab\PowerTab.psm1")  -ArgumentList ($pth + "\PowerTabConfig.xml") ;
 
 set-alias cnet check-net-alive;
 set-alias sudow elevate-process;
@@ -75,6 +80,7 @@ set-alias killd kill-drive;
 set-alias pls powerls;
 set-alias gcmm get-command-proper;
 set-alias clipr Get-ClipboardText;
-# Load posh-git example profile
-. 'C:\Users\Kaelan\Documents\WindowsPowerShell\Modules\posh-git\profile.example.ps1' ;
+
+echo "Loaded Profile";
+
 
