@@ -66,7 +66,7 @@ function Get-ClipboardText
     }
     powershell -sta -noprofile -command $command
 }
-$pth = (pwd | select -ExpandProperty Path) + "\WindowsPowerShell\";
+$pth = $profile -replace "Microsoft.Powershell_profile.ps1", "";
 
 . ($pth + "Modules\posh-git\profile.example.ps1");
 Import-Module ($pth + "Modules\GitIgnores\GitIgnores.psm1");
