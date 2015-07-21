@@ -66,6 +66,14 @@ function Get-ClipboardText
     }
     powershell -sta -noprofile -command $command
 }
+function fuck {
+    $fuck = $(thefuck (get-history -count 1).commandline)
+    if($fuck.startswith("echo")) {
+        $fuck.substring(5)
+    }
+    else { iex "$fuck" }
+}
+
 $pth = $profile -replace "Microsoft.Powershell_profile.ps1", "";
 
 . ($pth + "Modules\posh-git\profile.example.ps1");
