@@ -78,7 +78,7 @@ $pth = $profile -replace "Microsoft.Powershell_profile.ps1", "";
 
 . ($pth + "Modules\posh-git\profile.example.ps1");
 Import-Module ($pth + "Modules\GitIgnores\GitIgnores.psm1");
-Import-Module ($pth + "Modules\PowerTab\PowerTab.psm1")  -ArgumentList ($pth + "\PowerTabConfig.xml") ;
+#Import-Module ($pth + "Modules\PowerTab\PowerTab.psm1")  -ArgumentList ($pth + "\PowerTabConfig.xml") ;
 
 set-alias cnet check-net-alive;
 set-alias sudow elevate-process;
